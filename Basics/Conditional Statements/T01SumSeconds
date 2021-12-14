@@ -1,0 +1,33 @@
+using System;
+
+namespace T01SumSeconds
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int firstRunner = int.Parse(Console.ReadLine());
+            int secondRunner = int.Parse(Console.ReadLine());
+            int thirdRunner = int.Parse(Console.ReadLine());
+            int totalTime = firstRunner + secondRunner + thirdRunner;
+            int minutes = totalTime / 60;
+            int seconds = totalTime % 60;
+            if (seconds >= 10)
+            {
+                Console.WriteLine($"{minutes}:{seconds}");
+            }
+            else
+            {
+                Console.WriteLine($"{minutes}:{seconds:d2}");
+            
+            }
+
+
+
+
+
+            }
+        
+
+    }
+}
