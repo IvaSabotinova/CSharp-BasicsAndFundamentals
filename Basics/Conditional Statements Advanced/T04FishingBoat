@@ -1,0 +1,143 @@
+using System;
+
+namespace T04Fishing_Boat
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int budget = int.Parse(Console.ReadLine());
+            string season = Console.ReadLine();
+            int numberofFishermen = int.Parse(Console.ReadLine());
+
+            double finalPriceBoatHire = 0;
+            
+            if (season == "Spring")
+            {
+                double priceOfBoatHireWithoutDiscount = 3000;
+
+                if (numberofFishermen <= 6 && numberofFishermen % 2 == 0)
+                {
+                    finalPriceBoatHire = priceOfBoatHireWithoutDiscount * 0.90 * 0.95;
+                }
+
+                else if (numberofFishermen <= 6 && numberofFishermen % 2 != 0)
+                {
+                    finalPriceBoatHire = priceOfBoatHireWithoutDiscount * 0.90;
+                }
+                else if (numberofFishermen >= 7 && numberofFishermen <= 11 && numberofFishermen % 2 == 0)
+                {
+                    finalPriceBoatHire = priceOfBoatHireWithoutDiscount * 0.85 * 0.95;
+                }
+
+                else if (numberofFishermen >= 7 && numberofFishermen <= 11 && numberofFishermen % 2 != 0)
+                {
+                    finalPriceBoatHire = priceOfBoatHireWithoutDiscount * 0.85;
+                }
+                else if (numberofFishermen >= 12 && numberofFishermen % 2 == 0)
+                {
+                    finalPriceBoatHire = priceOfBoatHireWithoutDiscount * 0.75 * 0.95;
+                }
+
+                else if (numberofFishermen >= 12 && numberofFishermen % 2 != 0)
+                {
+                    finalPriceBoatHire = priceOfBoatHireWithoutDiscount * 0.75;
+                }
+            }
+            if (season == "Summer")
+            {
+                double priceOfBoatHireWithoutDiscount = 4200;
+
+                if (numberofFishermen <= 6 && numberofFishermen % 2 == 0)
+                {
+                    finalPriceBoatHire = priceOfBoatHireWithoutDiscount * 0.90 * 0.95;
+                }
+
+                else if (numberofFishermen <= 6 && numberofFishermen % 2 != 0)
+                {
+                    finalPriceBoatHire = priceOfBoatHireWithoutDiscount * 0.90;
+                }
+                else if (numberofFishermen >= 7 && numberofFishermen <= 11 && numberofFishermen % 2 == 0)
+                {
+                    finalPriceBoatHire = priceOfBoatHireWithoutDiscount * 0.85 * 0.95;
+                }
+
+                else if (numberofFishermen >= 7 && numberofFishermen <= 11 && numberofFishermen % 2 != 0)
+                {
+                    finalPriceBoatHire = priceOfBoatHireWithoutDiscount * 0.85;
+                }
+                else if (numberofFishermen >= 12 && numberofFishermen % 2 == 0)
+                {
+                    finalPriceBoatHire = priceOfBoatHireWithoutDiscount * 0.75 * 0.95;
+                }
+
+                else if (numberofFishermen >= 12 && numberofFishermen % 2 != 0)
+                {
+                    finalPriceBoatHire = priceOfBoatHireWithoutDiscount * 0.75;
+                }
+            }
+            if (season == "Autumn")
+            {
+                double priceOfBoatHireWithoutDiscount = 4200;
+
+                if (numberofFishermen <= 6)
+                {
+                    finalPriceBoatHire = priceOfBoatHireWithoutDiscount * 0.90;
+                }
+
+                else if (numberofFishermen >= 7 && numberofFishermen <= 11)
+                {
+                    finalPriceBoatHire = priceOfBoatHireWithoutDiscount * 0.85;
+                }
+
+                else if (numberofFishermen >= 12)
+                {
+                    finalPriceBoatHire = priceOfBoatHireWithoutDiscount * 0.75;
+                }
+
+            }
+            if (season == "Winter")
+            {
+                double priceOfBoatHireWithoutDiscount = 2600;
+
+                if (numberofFishermen <= 6 && numberofFishermen % 2 == 0)
+                {
+                    finalPriceBoatHire = priceOfBoatHireWithoutDiscount * 0.90 * 0.95;
+                }
+
+                else if (numberofFishermen <= 6 && numberofFishermen % 2 != 0)
+                {
+                    finalPriceBoatHire = priceOfBoatHireWithoutDiscount * 0.90;
+                }
+                else if (numberofFishermen >= 7 && numberofFishermen <= 11 && numberofFishermen % 2 == 0)
+                {
+                    finalPriceBoatHire = priceOfBoatHireWithoutDiscount * 0.85 * 0.95;
+                }
+
+                else if (numberofFishermen >= 7 && numberofFishermen <= 11 && numberofFishermen % 2 != 0)
+                {
+                    finalPriceBoatHire = priceOfBoatHireWithoutDiscount * 0.85;
+                }
+                else if (numberofFishermen >= 12 && numberofFishermen % 2 == 0)
+                {
+                    finalPriceBoatHire = priceOfBoatHireWithoutDiscount * 0.75 * 0.95;
+                }
+
+                else if (numberofFishermen >= 12 && numberofFishermen % 2 != 0)
+                {
+                    finalPriceBoatHire = priceOfBoatHireWithoutDiscount * 0.75;
+                }
+            }
+            if (budget >= finalPriceBoatHire)
+            {
+                double moneyLeft = budget - finalPriceBoatHire;
+                Console.WriteLine($"Yes! You have {moneyLeft:f2} leva left.");
+            }
+            else if (budget < finalPriceBoatHire)
+            {
+                double moneyNeeded = finalPriceBoatHire - budget;
+                Console.WriteLine($"Not enough money! You need {moneyNeeded:f2} leva.");
+            }
+        }
+    }
+}
