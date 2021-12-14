@@ -1,0 +1,79 @@
+using System;
+
+namespace T07Hotel_Room
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string month = Console.ReadLine();
+            int numberOfNightsStay = int.Parse(Console.ReadLine());
+            double priceWholeStayStudio = 0;
+            double priceWholeStayApartment = 0;
+
+            switch (month)
+            {
+                case "May":
+                case "October":
+                    if (numberOfNightsStay <= 7)
+                    {
+                        priceWholeStayStudio = numberOfNightsStay * 50;
+                        priceWholeStayApartment = numberOfNightsStay * 65;
+
+                    }
+                    else if (numberOfNightsStay > 7 && numberOfNightsStay <=14)
+                    {
+                        priceWholeStayStudio = numberOfNightsStay * 50 * 0.95;
+                        priceWholeStayApartment = numberOfNightsStay * 65;
+                    }
+                    else if (numberOfNightsStay > 14)
+                    {
+                        priceWholeStayStudio = numberOfNightsStay * 50 * 0.70;
+                        priceWholeStayApartment = numberOfNightsStay * 65 * 0.90;
+                    }
+                    break;
+
+                case "June":
+                case "September":
+                    if (numberOfNightsStay <= 14)
+                    {
+                        priceWholeStayStudio = numberOfNightsStay * 75.20;
+                        priceWholeStayApartment = numberOfNightsStay * 68.70;
+                    }
+                    else if (numberOfNightsStay > 14)
+
+                    {
+                        priceWholeStayStudio = numberOfNightsStay * 75.20 * 0.80;
+                        priceWholeStayApartment = numberOfNightsStay * 68.70 * 0.90;
+                    }
+
+                    break;
+                case "July":
+                case "August":
+
+
+                    if (numberOfNightsStay <= 14)
+                    {
+                        priceWholeStayStudio = numberOfNightsStay * 76;
+                        priceWholeStayApartment = numberOfNightsStay * 77;
+
+                    }
+
+                    else if (numberOfNightsStay > 14)
+                    {
+                        priceWholeStayStudio = numberOfNightsStay * 76;
+                        priceWholeStayApartment = numberOfNightsStay * 77 * 0.90;
+
+                    }
+                    break;
+            }
+
+            Console.WriteLine($"Apartment: {priceWholeStayApartment:f2} lv.");
+            Console.WriteLine($"Studio: {priceWholeStayStudio:f2} lv.");
+
+
+
+
+        }
+    }
+}
