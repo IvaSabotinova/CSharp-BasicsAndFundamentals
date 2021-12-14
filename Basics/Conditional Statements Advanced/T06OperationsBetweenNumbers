@@ -1,0 +1,102 @@
+using System;
+
+namespace T06OperationsBetweenNumbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int N1 = int.Parse(Console.ReadLine());
+            double N2 = double.Parse(Console.ReadLine());
+            string action = Console.ReadLine();
+            double finalResult = 0;
+
+            switch (action)
+            {
+                case "+":
+                    {
+                        finalResult = N1 + N2;
+                        if (finalResult % 2 == 0)
+                        {
+                            Console.WriteLine($"{N1} + {N2} = {finalResult} - even"); break;
+                        }
+                        else if (finalResult % 2 != 0)
+                        {
+                            Console.WriteLine($"{N1} + {N2} = {finalResult} - odd"); break;
+                        }
+
+                    }
+                    break;
+                case "-":
+
+                    {
+
+                        finalResult = N1 - N2;
+                        if (finalResult % 2 == 0)
+                        {
+                            Console.WriteLine($"{N1} - {N2} = {finalResult} - even"); break;
+                        }
+                        else if (finalResult % 2 != 0)
+                        {
+                            Console.WriteLine($"{N1} - {N2} = {finalResult} - odd"); break;
+                        }
+                    }
+                    
+                    break;
+                case "*":
+
+                    {
+                        finalResult = N1 * N2;
+                        if (finalResult % 2 == 0)
+                        {
+                            Console.WriteLine($"{N1} * {N2} = {finalResult} - even"); break;
+                        }
+                        else if (finalResult % 2 != 0)
+                        {
+                            Console.WriteLine($"{N1} * {N2} = {finalResult} - odd"); break;
+                        }
+
+                    }
+                    break;
+                case "/":
+
+                    {
+                        finalResult = N1 / N2;
+
+                        if (N2 == 0)
+                        {
+                            Console.WriteLine($"Cannot divide {N1} by zero"); break;
+                        }
+                        else if (finalResult % 2 == 0)
+                        {
+                            Console.WriteLine($"{N1} / {N2} = {finalResult:f2}"); break;
+                        }
+                        else if (finalResult % 2 != 0)
+                        {
+                            Console.WriteLine($"{N1} / {N2} = {finalResult:f2}"); break;
+                        }
+
+                    }
+                    break;
+                case "%":
+
+                    {
+                        finalResult = N1 % N2;
+
+                        if (N2 == 0)
+                        {
+                            Console.WriteLine($"Cannot divide {N1} by zero"); break;
+                        }
+                        else
+                        {
+                            Console.WriteLine($"{N1} % {N2} = {finalResult}"); break;
+                        }
+
+                    }
+                    break;
+            }
+
+
+        }
+    }
+}
