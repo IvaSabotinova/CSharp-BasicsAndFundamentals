@@ -1,0 +1,39 @@
+using System;
+
+namespace T06GodzillavsKong1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double budget = double.Parse(Console.ReadLine());
+            int stuntmen = int.Parse(Console.ReadLine());
+            double priceClothesOneStuntman = double.Parse(Console.ReadLine());
+
+            double priceClothesStuntmen = priceClothesOneStuntman * stuntmen;
+            double decor = budget * 0.10;
+            
+
+            if (stuntmen > 150)
+            {
+                priceClothesStuntmen *= 0.90;
+            }
+
+            double expenses = priceClothesStuntmen + decor;
+
+            if (budget < expenses)
+            {
+                double shortMoney = expenses - budget;
+                Console.WriteLine("Not enough money!");
+                Console.WriteLine($"Wingard needs {shortMoney:f2} leva more.");
+            }
+            else
+            {
+                double leftMoney = budget - expenses;
+                Console.WriteLine("Action!");
+                Console.WriteLine($"Wingard starts filming with {leftMoney:f2} leva left.");
+            }
+
+        }
+    }
+}
