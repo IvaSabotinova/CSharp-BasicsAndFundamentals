@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace T10InvalidNumber
+namespace T12TradeCommissions
 {
     class Program
     {
