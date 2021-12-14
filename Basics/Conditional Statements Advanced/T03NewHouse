@@ -1,0 +1,179 @@
+using System;
+
+namespace T03New_House
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string typeFlower = Console.ReadLine();
+            int numberOfFlowers = int.Parse(Console.ReadLine());
+            int budget = int.Parse(Console.ReadLine());
+
+            double priceOfBoughtFlowers = 0;
+
+            if (typeFlower == "Roses" && numberOfFlowers > 80)
+            {
+
+                priceOfBoughtFlowers = numberOfFlowers * 5.00 * 0.90;
+
+                if (priceOfBoughtFlowers <= budget)
+                {
+                    double leftMoney = budget - priceOfBoughtFlowers;
+                    Console.WriteLine($"Hey, you have a great garden with {numberOfFlowers} {typeFlower} and {leftMoney:f2} leva left.");
+                }
+                else if (priceOfBoughtFlowers > budget)
+                {
+                    double neededMoney = priceOfBoughtFlowers - budget;
+                    Console.WriteLine($"Not enough money, you need {neededMoney:f2} leva more.");
+                }
+            }
+            else if (typeFlower == "Roses" && numberOfFlowers <= 80)
+            {
+                priceOfBoughtFlowers = numberOfFlowers * 5.00;
+
+                if (priceOfBoughtFlowers <= budget)
+                {
+                    double leftMoney = budget - priceOfBoughtFlowers;
+                    Console.WriteLine($"Hey, you have a great garden with {numberOfFlowers} {typeFlower} and {leftMoney:f2} leva left.");
+                }
+                else if (priceOfBoughtFlowers > budget)
+                {
+                    double neededMoney = priceOfBoughtFlowers - budget;
+                    Console.WriteLine($"Not enough money, you need {neededMoney:f2} leva more.");
+                }
+
+            }
+            if (typeFlower == "Dahlias" && numberOfFlowers > 90)
+            {
+
+                priceOfBoughtFlowers = numberOfFlowers * 3.80 * 0.85;
+
+                if (priceOfBoughtFlowers <= budget)
+                {
+                    double leftMoney = budget - priceOfBoughtFlowers;
+                    Console.WriteLine($"Hey, you have a great garden with {numberOfFlowers} {typeFlower} and {leftMoney:f2} leva left.");
+                }
+                else if (priceOfBoughtFlowers > budget)
+                {
+                    double neededMoney = priceOfBoughtFlowers - budget;
+                    Console.WriteLine($"Not enough money, you need {neededMoney:f2} leva more.");
+                }
+            }
+            else if (typeFlower == "Dahlias" && numberOfFlowers <= 90)
+            {
+                priceOfBoughtFlowers = numberOfFlowers * 3.80;
+
+                if (priceOfBoughtFlowers <= budget)
+                {
+                    double leftMoney = budget - priceOfBoughtFlowers;
+                    Console.WriteLine($"Hey, you have a great garden with {numberOfFlowers} {typeFlower} and {leftMoney:f2} leva left.");
+                }
+                else if (priceOfBoughtFlowers > budget)
+                {
+                    double neededMoney = priceOfBoughtFlowers - budget;
+                    Console.WriteLine($"Not enough money, you need {neededMoney:f2} leva more.");
+                }
+
+            }
+            if (typeFlower == "Tulips" && numberOfFlowers > 80)
+            {
+
+                priceOfBoughtFlowers = numberOfFlowers * 2.80 * 0.85;
+
+                if (priceOfBoughtFlowers <= budget)
+                {
+                    double leftMoney = budget - priceOfBoughtFlowers;
+                    Console.WriteLine($"Hey, you have a great garden with {numberOfFlowers} {typeFlower} and {leftMoney:f2} leva left.");
+                }
+                else if (priceOfBoughtFlowers > budget)
+                {
+                    double neededMoney = priceOfBoughtFlowers - budget;
+                    Console.WriteLine($"Not enough money, you need {neededMoney:f2} leva more.");
+                }
+            }
+            else if (typeFlower == "Tulips" && numberOfFlowers <= 80)
+            {
+                priceOfBoughtFlowers = numberOfFlowers * 2.80;
+
+                if (priceOfBoughtFlowers <= budget)
+                {
+                    double leftMoney = budget - priceOfBoughtFlowers;
+                    Console.WriteLine($"Hey, you have a great garden with {numberOfFlowers} {typeFlower} and {leftMoney:f2} leva left.");
+                }
+                else if (priceOfBoughtFlowers > budget)
+                {
+                    double neededMoney = priceOfBoughtFlowers - budget;
+                    Console.WriteLine($"Not enough money, you need {neededMoney:f2} leva more.");
+                }
+
+            }
+            if (typeFlower == "Narcissus" && numberOfFlowers < 120)
+            {
+
+                priceOfBoughtFlowers = numberOfFlowers * 3.00 * 1.15;
+
+                if (priceOfBoughtFlowers <= budget)
+                {
+                    double leftMoney = budget - priceOfBoughtFlowers;
+                    Console.WriteLine($"Hey, you have a great garden with {numberOfFlowers} {typeFlower} and {leftMoney:f2} leva left.");
+                }
+                else if (priceOfBoughtFlowers > budget)
+                {
+                    double neededMoney = priceOfBoughtFlowers - budget;
+                    Console.WriteLine($"Not enough money, you need {neededMoney:f2} leva more.");
+                }
+            }
+            else if (typeFlower == "Narcissus" && numberOfFlowers >= 120)
+            {
+                priceOfBoughtFlowers = numberOfFlowers * 3.00;
+
+                if (priceOfBoughtFlowers <= budget)
+                {
+                    double leftMoney = budget - priceOfBoughtFlowers;
+                    Console.WriteLine($"Hey, you have a great garden with {numberOfFlowers} {typeFlower} and {leftMoney:f2} leva left.");
+                }
+                else if (priceOfBoughtFlowers > budget)
+                {
+                    double neededMoney = priceOfBoughtFlowers - budget;
+                    Console.WriteLine($"Not enough money, you need {neededMoney:f2} leva more.");
+                }
+
+            }
+            if (typeFlower == "Gladiolus" && numberOfFlowers < 80)
+            {
+
+                priceOfBoughtFlowers = numberOfFlowers * 2.50 * 1.20;
+
+                if (priceOfBoughtFlowers <= budget)
+                {
+                    double leftMoney = budget - priceOfBoughtFlowers;
+                    Console.WriteLine($"Hey, you have a great garden with {numberOfFlowers} {typeFlower} and {leftMoney:f2} leva left.");
+                }
+                else if (priceOfBoughtFlowers > budget)
+                {
+                    double neededMoney = priceOfBoughtFlowers - budget;
+                    Console.WriteLine($"Not enough money, you need {neededMoney:f2} leva more.");
+                }
+            }
+            else if (typeFlower == "Gladiolus" && numberOfFlowers >= 80)
+            {
+                priceOfBoughtFlowers = numberOfFlowers * 2.50;
+
+                if (priceOfBoughtFlowers <= budget)
+                {
+                    double leftMoney = budget - priceOfBoughtFlowers;
+                    Console.WriteLine($"Hey, you have a great garden with {numberOfFlowers} {typeFlower} and {leftMoney:f2} leva left.");
+                }
+                else if (priceOfBoughtFlowers > budget)
+                {
+                    double neededMoney = priceOfBoughtFlowers - budget;
+                    Console.WriteLine($"Not enough money, you need {neededMoney:f2} leva more.");
+                }
+
+            }
+
+        }
+
+    }
+}
