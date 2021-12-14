@@ -1,0 +1,42 @@
+using System;
+
+namespace T02HalfSumElement
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int n = int.Parse(Console.ReadLine());
+            double sumAllFigures = 0;
+            double maxNumber = int.MinValue;
+
+            for (int i = 1; i <= n; i++)
+            {
+                double figure = double.Parse(Console.ReadLine());
+                sumAllFigures += figure;
+
+                if (figure > maxNumber)
+                {
+                    maxNumber = figure;
+                }
+            }
+
+            double sumFiguresWOMaxNumber = sumAllFigures - maxNumber;
+
+            if (maxNumber == sumFiguresWOMaxNumber)
+            {
+                Console.WriteLine("Yes");
+                Console.WriteLine($"Sum = {maxNumber}");
+            }
+            else
+            {
+                Console.WriteLine("No");
+                Console.WriteLine($"Diff = {Math.Abs(sumFiguresWOMaxNumber - maxNumber)}");
+            }
+
+
+
+        }
+    }
+}
