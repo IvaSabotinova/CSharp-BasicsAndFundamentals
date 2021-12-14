@@ -1,0 +1,41 @@
+using System;
+
+namespace T10OddEvenSum1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            int sumEvens = 0;
+            int sumOdds = 0;
+
+            for (int i = 1; i <= n; i++)
+            {
+                int figure = int.Parse(Console.ReadLine());
+                
+                if (i % 2 == 0)
+                {
+                    sumEvens += figure;
+
+                }
+                else
+                {
+                    sumOdds += figure;
+                }
+            }
+            if (sumEvens == sumOdds)
+            {
+                Console.WriteLine("Yes");
+                Console.WriteLine($"Sum = {sumEvens}");
+
+
+            }
+            else
+            {
+                Console.WriteLine("No");
+                Console.WriteLine($"Diff = {Math.Abs(sumEvens-sumOdds)}");
+            }
+        }
+    }
+}
