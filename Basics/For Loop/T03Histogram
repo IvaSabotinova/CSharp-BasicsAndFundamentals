@@ -1,0 +1,59 @@
+using System;
+
+namespace T04Histogram
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            int numbersp1 = 0;
+            int numbersp2 = 0;
+            int numbersp3 = 0;
+            int numbersp4 = 0;
+            int numbersp5 = 0;
+
+
+            for (int i = 1; i <= n; i++)
+            {
+                int number = int.Parse(Console.ReadLine());
+
+                if (number < 200)
+                {
+                    numbersp1++;
+                }
+                else if (number >= 200 && number <= 399)
+                {
+                    numbersp2++;
+                }
+                else if (number >= 400 && number <= 599)
+                {
+                    numbersp3++;
+                }
+                else if (number >= 600 && number <= 799)
+                {
+                    numbersp4++;
+                }
+                else
+                {
+                    numbersp5++;
+                }
+            }
+            double p1 = (double) numbersp1 / n * 100;
+            double p2 = (double) numbersp2 / n * 100;
+            double p3 = 1.0 * numbersp3 / n * 100;
+            double p4 = 1.0 * numbersp4 / n * 100;
+            double p5 = 1.0 * numbersp5 / n * 100;
+
+            Console.WriteLine($"{p1:f2}%");
+            Console.WriteLine($"{p2:f2}%");
+            Console.WriteLine($"{p3:f2}%");
+            Console.WriteLine($"{p4:f2}%");
+            Console.WriteLine($"{p5:f2}%");
+
+
+
+
+        }
+    }
+}
