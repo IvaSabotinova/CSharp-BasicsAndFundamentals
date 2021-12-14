@@ -1,0 +1,56 @@
+using System;
+
+namespace T05Journey
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double budget = double.Parse(Console.ReadLine());
+            string season = Console.ReadLine();
+
+
+            if (budget <= 100 && season == "summer")
+            {
+                string destination = "Bulgaria";
+                string typeHoliday = "Camp";
+                double spentAmount = budget * 0.30;
+                Console.WriteLine($"Somewhere in {destination}");
+                Console.WriteLine($"{typeHoliday} - {spentAmount:f2}");
+            }
+            else if (budget <= 100 && season == "winter")
+            {
+                string destination = "Bulgaria";
+                string typeHoliday = "Hotel";
+                double spentAmount = budget * 0.70;
+                Console.WriteLine($"Somewhere in {destination}");
+                Console.WriteLine($"{typeHoliday} - {spentAmount:f2}");
+            }
+            else if (budget <= 1000 && season == "summer")
+            {
+                string destination = "Balkans";
+                string typeHoliday = "Camp";
+                double spentAmount = budget * 0.40;
+                Console.WriteLine($"Somewhere in {destination}");
+                Console.WriteLine($"{typeHoliday} - {spentAmount:f2}");
+            }
+            else if (budget <= 1000 && season == "winter")
+            {
+                string destination = "Balkans";
+                string typeHoliday = "Hotel";
+                double spentAmount = budget * 0.80;
+                Console.WriteLine($"Somewhere in {destination}");
+                Console.WriteLine($"{typeHoliday} - {spentAmount:f2}");
+            }
+            else if (budget > 1000 && (season == "summer" || season == "winter"))
+            {
+                string destination = "Europe";
+                string typeHoliday = "Hotel";
+                double spentAmount = budget * 0.90;
+                Console.WriteLine($"Somewhere in {destination}");
+                Console.WriteLine($"{typeHoliday} - {spentAmount:f2}");
+            }
+           
+            }
+    }
+}
