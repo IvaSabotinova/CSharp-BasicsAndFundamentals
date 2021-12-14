@@ -1,0 +1,26 @@
+using System;
+
+namespace _08CinemaTicket
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string weekday = Console.ReadLine();
+            if (weekday == "Monday" || weekday == "Tuesday" || weekday == "Friday")
+            {
+
+                Console.WriteLine(12);
+            }
+            else if (weekday == "Wednesday" || weekday == "Thursday")
+            {
+                Console.WriteLine(14);
+
+            }
+            else if (weekday == "Saturday" || weekday == "Sunday")
+
+                Console.WriteLine(16);
+        }
+
+    }
+}
