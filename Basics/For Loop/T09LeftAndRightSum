@@ -1,0 +1,33 @@
+using System;
+
+namespace _09LeftAndRightSum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            int sumLeftSide = 0;
+            int sumRightSide = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                int figures = int.Parse(Console.ReadLine());
+                sumLeftSide += figures;
+            }
+            for (int i = 1; i <= n; i++)
+            {
+                int figures = int.Parse(Console.ReadLine());
+                sumRightSide += figures;
+            }
+            if (sumLeftSide == sumRightSide)
+            {
+                Console.WriteLine($"Yes, sum = {sumLeftSide}");
+            }
+            else
+            {
+                int difference = Math.Abs(sumLeftSide - sumRightSide);
+                Console.WriteLine($"No, diff = {difference}");
+            }
+        }
+    }
+}
