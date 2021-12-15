@@ -1,0 +1,28 @@
+using System;
+
+namespace T05Account_Balance
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string command = Console.ReadLine();
+            double accountSum = 0;
+
+            while (command != "NoMoreMoney")
+            {
+                double installment = double.Parse(command);
+                if (installment < 0)
+                {
+                    Console.WriteLine("Invalid operation!"); break;
+                }
+                accountSum += installment;
+                Console.WriteLine($"Increase: {installment:f2}");
+                command = Console.ReadLine();
+
+            }
+            Console.WriteLine($"Total: {accountSum:f2}");
+                
+        }
+    }
+}
