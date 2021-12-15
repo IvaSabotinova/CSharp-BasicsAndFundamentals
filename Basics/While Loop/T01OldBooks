@@ -1,0 +1,42 @@
+using System;
+
+namespace T01OldBooksVer2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string favoriteBook = Console.ReadLine();
+            string book = Console.ReadLine();
+            bool isFavoriteBookFound = false;
+            int countBooks = 0;
+
+            while (book != "No More Books")
+            {
+
+                if (book == favoriteBook)
+                {
+                    isFavoriteBookFound = true; break;
+                }
+                
+                countBooks += 1;
+                book = Console.ReadLine();
+            }
+            
+            if (isFavoriteBookFound)
+            {
+                
+                Console.WriteLine($"You checked {countBooks} books and found it."); 
+
+            }
+            else if (book == "No More Books")
+            {
+                Console.WriteLine("The book you search is not here!");
+                Console.WriteLine($"You checked {countBooks} books."); 
+            }
+
+
+
+        }
+    }
+}
