@@ -1,0 +1,50 @@
+using System;
+
+namespace T02ExamPreparation
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int badGrades = int.Parse(Console.ReadLine());
+
+            string problemName = Console.ReadLine();
+
+            int numberOfProblems = 0;
+            int badGradescounter = 0;
+            int gradesTotal = 0;
+            string lastProblemName = "";
+
+            while (problemName != "Enough")
+            {
+
+                int grade = int.Parse(Console.ReadLine());
+                numberOfProblems++;
+                gradesTotal += grade;
+                lastProblemName = problemName;
+
+                if (grade <= 4)
+                {
+                    badGradescounter++;
+                    if (badGradescounter == badGrades)
+                    {
+                        Console.WriteLine($"You need a break, {badGradescounter} poor grades."); break;
+                    }
+                }
+                problemName = Console.ReadLine();
+            }
+            double averageGrade = 1.0 * gradesTotal / numberOfProblems;
+
+            if (problemName == "Enough")
+            {
+                Console.WriteLine($"Average score: {averageGrade:f2}");
+                Console.WriteLine($"Number of problems: {numberOfProblems}");
+                Console.WriteLine($"Last problem: {lastProblemName}");
+
+
+            }
+
+
+        }
+    }
+}
