@@ -1,0 +1,29 @@
+using System;
+
+namespace TEMP
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string destination = Console.ReadLine();
+
+
+            while (destination != "End")
+            {
+                double budgetForDestination = double.Parse(Console.ReadLine());
+                double savedMoneyForDestination = 0;
+                while (budgetForDestination > savedMoneyForDestination)
+                {
+                    double currentAmount = double.Parse(Console.ReadLine());
+                    savedMoneyForDestination += currentAmount;
+
+                }
+                Console.WriteLine($"Going to {destination}!");
+                destination = Console.ReadLine();
+
+
+            }
+        }
+    }
+}
