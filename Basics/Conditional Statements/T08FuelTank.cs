@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace T08FuelTank
 {
@@ -12,33 +12,33 @@ namespace T08FuelTank
             if (fuelType == "Diesel" && litresInReservoir >= 25)
             {      
 
-                Console.WriteLine($"You have enough {fuelType}.");
+                Console.WriteLine($"You have enough {fuelType.ToLower()}.");
             }
             
             else if (fuelType == "Gasoline" && litresInReservoir >= 25)
             {
                 
-                Console.WriteLine($"You have enough {fuelType}.");
+                Console.WriteLine($"You have enough {fuelType.ToLower()}.");
             }
             else if (fuelType == "Gas" && litresInReservoir >= 25)
             {
                 
-                Console.WriteLine($"You have enough {fuelType}.");
+                Console.WriteLine($"You have enough {fuelType.ToLower()}.");
             }
             else if (fuelType == "Diesel" && litresInReservoir < 25)
             {
                
-                Console.WriteLine($"Fill your tank with {fuelType}!");
+                Console.WriteLine($"Fill your tank with {fuelType.ToLower()}!");
             }
             else if (fuelType == "Gasoline" && litresInReservoir < 25)
             {
                 
-                Console.WriteLine($"Fill your tank with {fuelType}!");
+                Console.WriteLine($"Fill your tank with {fuelType.ToLower()}!");
             }
             else if (fuelType == "Gas" && litresInReservoir < 25)
             {
                 
-                Console.WriteLine($"Fill your tank with {fuelType}!");
+                Console.WriteLine($"Fill your tank with {fuelType.ToLower()}!");
             }
             else
             {
