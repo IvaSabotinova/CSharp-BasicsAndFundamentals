@@ -1,106 +1,82 @@
 ﻿using System;
 
-namespace T07VendingMachine
+namespace T07VendingMachineVer2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string input = Console.ReadLine();
+
             // Your vending machine only works with 0.1, 0.2, 0.5, 1, and 2 coins. 
-            // Nuts", "Water", "Crisps", "Soda", "Coke". The prices are: 2.0, 0.7, 1.5, 0.8, 1.0 respectively
+            // Nuts", "Water", "Crisps", "Soda", "Coke". The prices are: 2.0, 0.7, 1.5, 0.8, 1.0 respectively.
+
+            double productPrice = 0;
             double totalInsertedMoney = 0;
 
-            while (input != "Start")
+            while (true)
             {
+                string input = Console.ReadLine();
+
+                if (input == "Start")
+                {
+                    break;
+                }
+
                 double insertedCoins = double.Parse(input);
-                if (insertedCoins == 0.10 || insertedCoins == 0.20 || insertedCoins == 0.50 ||
-                    insertedCoins == 1.00 || insertedCoins == 2.00)
+
+                if (insertedCoins == 0.1 || insertedCoins == 0.2 || insertedCoins == 0.5 ||
+                    insertedCoins == 1 || insertedCoins == 2)
                 {
                     totalInsertedMoney += insertedCoins;
                 }
                 else
                 {
-                    Console.WriteLine($"Cannot accept {insertedCoins}");
+                    Console.WriteLine($"Cannot accept {insertedCoins}"); 
                 }
 
-                input = Console.ReadLine();
             }
 
-            string purchasedProduct = Console.ReadLine();
 
-            while (purchasedProduct != "End")
+
+            while (true)
             {
+                string product = Console.ReadLine();
 
-                if (purchasedProduct == "Nuts")
+                if (product == "End")
                 {
+                    break;
+                }
 
-                    if (totalInsertedMoney < 2.00)
-                    {
-                        Console.WriteLine("Sorry, not enough money");
-                    }
-                    else
-                    {
-                        totalInsertedMoney -= 2.00;
-                        Console.WriteLine($"Purchased nuts");
-                    }
-                }
-                else if (purchasedProduct == "Water")
+                switch (product)
                 {
-                    if (totalInsertedMoney < 0.70)
-                    {
-                        Console.WriteLine("Sorry, not enough money");
-                    }
-                    else
-                    {
-                        totalInsertedMoney -= 0.70;
-                        Console.WriteLine($"Purchased water");
-                    }
+                    // Nuts", "Water", "Crisps", "Soda", "Coke". The prices are: 2.0, 0.7, 1.5, 0.8, 1.0 respectively.
+                    case "Nuts": productPrice = 2.0; break;
+                    case "Water": productPrice = 0.7; break;
+                    case "Crisps": productPrice = 1.5; break;
+                    case "Soda": productPrice = 0.8; break;
+                    case "Coke": productPrice = 1.0; break;
+                    default: Console.WriteLine("Invalid product"); continue;
                 }
-                else if (purchasedProduct == "Crisps")
+
+                totalInsertedMoney -= productPrice;
+
+                if (totalInsertedMoney >= 0)
                 {
-                    if (totalInsertedMoney < 1.50)
-                    {
-                        Console.WriteLine("Sorry, not enough money");
-                    }
-                    else
-                    {
-                        totalInsertedMoney -= 1.50;
-                        Console.WriteLine($"Purchased crisps");
-                    }
-                }
-                else if (purchasedProduct == "Soda")
-                {
-                    if (totalInsertedMoney < 0.80)
-                    {
-                        Console.WriteLine("Sorry, not enough money");
-                    }
-                    else
-                    {
-                        totalInsertedMoney -= 0.80;
-                        Console.WriteLine($"Purchased soda");
-                    }
-                }
-                else if (purchasedProduct == "Coke")
-                {
-                    if (totalInsertedMoney < 1.00)
-                    {
-                        Console.WriteLine("Sorry, not enough money");
-                    }
-                    else
-                    {
-                        totalInsertedMoney -= 1.00;
-                        Console.WriteLine($"Purchased coke");
-                    }
+                    Console.WriteLine($"Purchased {product.ToLower()}");
                 }
                 else
                 {
-                    Console.WriteLine("Invalid product");
+                    totalInsertedMoney += productPrice;
+                    Console.WriteLine($"Sorry, not enough money");
                 }
-                purchasedProduct = Console.ReadLine();
+
+
             }
 
+
             Console.WriteLine($"Change: {totalInsertedMoney:f2}");
+
         }
+
     }
 }
