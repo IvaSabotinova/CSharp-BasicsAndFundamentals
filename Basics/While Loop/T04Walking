@@ -1,0 +1,52 @@
+using System;
+
+namespace T04Walking
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string steps = Console.ReadLine();
+            const int GOAL = 10000;
+            int totalSteps = 0;
+
+
+            while (steps != "Going home")
+            {
+
+                totalSteps += int.Parse(steps);
+
+                if (totalSteps >= GOAL)
+                {
+                    Console.WriteLine("Goal reached! Good job!");
+                    Console.WriteLine($"{totalSteps - GOAL} steps over the goal!"); return;
+
+                }
+                
+
+                steps = Console.ReadLine();
+
+            }
+
+            int moreSteps = int.Parse(Console.ReadLine());
+            totalSteps += moreSteps;
+
+
+            if (totalSteps >= GOAL)
+            {
+
+
+                Console.WriteLine("Goal reached! Good job!");
+                Console.WriteLine($"{totalSteps - GOAL} steps over the goal!");
+            }
+            else
+
+            {
+                Console.WriteLine($"{GOAL - totalSteps} more steps to reach goal.");
+            }
+
+
+
+        }
+    }
+}
