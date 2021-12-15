@@ -1,0 +1,40 @@
+using System;
+
+namespace T06BuildingVer2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int numberOfFloors = int.Parse(Console.ReadLine());
+            int numberOfRoomsPerFloor = int.Parse(Console.ReadLine());
+            
+
+            for (int currFloor = numberOfFloors; currFloor >= 1; currFloor--)
+            {
+                string floor = "";
+                for (int currRoom = 0; currRoom < numberOfRoomsPerFloor; currRoom++)
+                {
+                    if (currFloor == numberOfFloors)
+                    {
+                        floor += $"L{currFloor}{currRoom} ";
+                        continue;
+                    }
+
+                    if (currFloor % 2 == 0)
+                    {
+                        floor += $"O{currFloor}{currRoom} ";
+                    }
+                    else if (currFloor % 2 != 0)
+                    {
+                        floor += $"A{currFloor}{currRoom} ";
+                    }
+                }
+
+                Console.WriteLine(floor);
+
+            }
+            
+        }
+    }
+}
