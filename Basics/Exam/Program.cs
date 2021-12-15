@@ -1,72 +1,30 @@
 ﻿using System;
 
-namespace _05._Excursion_Sale
+namespace _06._Unique_PIN_Codes
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int seaExcursions = int.Parse(Console.ReadLine());
-            int mountainExcursions = int.Parse(Console.ReadLine());
+            int figure1Ceiling = int.Parse(Console.ReadLine());
+            int figure2Ceiling = int.Parse(Console.ReadLine());
+            int figure3Ceiling = int.Parse(Console.ReadLine());
 
-            string command = Console.ReadLine(); // sea or mountain
-           
-
-            double profit = 0;
             
 
-            while (command != "Stop")
+            for (int f1 = 2; f1 <= figure1Ceiling; f1 += 2)
             {
-                  
-                if (command == "sea")
+                for (int f2 = 2; f2 <= figure2Ceiling; f2++)
                 {
-
-                    seaExcursions--;
-                    if (seaExcursions >= 0)
+                    for (int f3 = 2; f3 <= figure3Ceiling; f3 += 2)
                     {
-                        profit += 680;
-                        
+                        if (f2 != 4 && f2 != 6 && f2 != 8 && f2 !=9)
+                        {
+                            Console.WriteLine($"{f1} {f2} {f3}");
+                        }
                     }
-                    else if (seaExcursions < 0)
-                    {
-                        
-                        profit += 0;
-                       
-                    }
-                    
                 }
-                else if (command == "mountain")
-                {
-                    mountainExcursions--;
-                    if (mountainExcursions >= 0)
-                    {
-                        profit += 499;
-                       
-                    }
-
-                    else if (mountainExcursions < 0)
-                    {
-                        
-                        profit += 0; 
-                    }
-                    
-
-                }
-                if (seaExcursions <= 0 && mountainExcursions <= 0)
-                {
-                    Console.WriteLine("Good job! Everything is sold."); break;
-
-
-                }
-                
-
-
-                command = Console.ReadLine();
             }
-
-
-            Console.WriteLine($"Profit: {profit} leva.");
-
         }
     }
 }
