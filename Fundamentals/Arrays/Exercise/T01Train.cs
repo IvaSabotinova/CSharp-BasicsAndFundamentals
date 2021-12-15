@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TArraysExercises
+namespace T01Train
 {
     class Program
     {
