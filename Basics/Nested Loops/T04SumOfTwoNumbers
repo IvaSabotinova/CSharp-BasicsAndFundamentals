@@ -1,0 +1,33 @@
+using System;
+
+namespace T04SumOfTwoNumbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int start = int.Parse(Console.ReadLine());
+            int end = int.Parse(Console.ReadLine());
+            int magicNumber = int.Parse(Console.ReadLine());
+            int combinationNumber = 0;
+
+
+            for (int num1 = start; num1 <= end; num1++)
+            {
+                for (int num2 = start; num2 <= end; num2++)
+                {
+                    combinationNumber++;
+
+                    if (num1 + num2 == magicNumber)
+                    {
+
+                        Console.WriteLine($"Combination N:{combinationNumber} ({num1} + {num2} = {magicNumber})"); return;
+                    }
+
+                }
+            }
+
+            Console.WriteLine($"{combinationNumber} combinations - neither equals {magicNumber}");
+        }
+    }
+}
