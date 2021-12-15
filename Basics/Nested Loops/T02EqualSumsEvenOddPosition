@@ -1,0 +1,48 @@
+using System;
+
+namespace T02EqualSumsEvenOddPositionVer2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int firstNumber = int.Parse(Console.ReadLine());
+            int lastNumber = int.Parse(Console.ReadLine());
+
+
+            for (int i = firstNumber; i <= lastNumber; i++)
+            {
+                int currNum = i;
+                int evenDigits = 0;
+                int oddDigits = 0;
+
+                int countOfDigits = 6;
+
+                while (countOfDigits > 0)
+                {
+                    int currDigit = currNum % 10;
+
+                    if (countOfDigits % 2 == 0)
+                    {
+                        evenDigits += currDigit;
+                    }
+                    else
+                    {
+                        oddDigits += currDigit;
+                    }
+
+                    currNum /= 10;
+                    countOfDigits--;
+                }
+
+                if (evenDigits == oddDigits)
+                {
+                    Console.Write(i + " ");
+                }
+
+
+
+            }
+        }
+    }
+}
