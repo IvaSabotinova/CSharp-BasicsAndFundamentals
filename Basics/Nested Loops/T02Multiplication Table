@@ -1,0 +1,22 @@
+using System;
+
+namespace T02Multiplication_Table
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            {
+                for (int Multiplicant1 = 1; Multiplicant1 <= 10; Multiplicant1++)
+                {
+                    for (int Multiplicant2 = 1; Multiplicant2 <= 10; Multiplicant2++)
+                    {
+                        int result = Multiplicant1 * Multiplicant2;
+                        Console.WriteLine($"{Multiplicant1} * {Multiplicant2} = {result}");
+                    }
+                }
+            }
+        }
+    }
+}
