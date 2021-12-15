@@ -1,0 +1,50 @@
+using System;
+
+namespace T03SumPrimeNonPrime
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string command = Console.ReadLine();
+            int sumOfPrimeNumbers = 0;
+            int sumOfNonPrimeNumbers = 0;
+
+            while (command != "stop")
+            {
+                int currNum = int.Parse(command);
+
+                if (currNum < 0)
+                {
+                    Console.WriteLine("Number is negative.");
+                }
+                else
+                {
+                    int count = 0;
+                    for (int i = 1; i <= currNum; i++)
+                    {
+
+                        if (currNum % i == 0)
+                        {
+                            count++;
+                        }
+                    }
+
+                    if (count == 2)
+                    {
+                        sumOfPrimeNumbers += currNum;
+                    }
+                    else
+                    {
+                        sumOfNonPrimeNumbers += currNum;
+                    }
+                }
+                command = Console.ReadLine();
+
+            }
+
+            Console.WriteLine($"Sum of all prime numbers is: {sumOfPrimeNumbers}");
+            Console.WriteLine($"Sum of all non prime numbers is: {sumOfNonPrimeNumbers}");
+        }
+    }
+}
