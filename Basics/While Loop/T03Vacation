@@ -1,0 +1,57 @@
+using System;
+
+namespace T03Vacation
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double vacationMoney = double.Parse(Console.ReadLine());
+            double availableMoney = double.Parse(Console.ReadLine());
+            string operation = Console.ReadLine();
+
+            int countOfConsequativeSpendingDays = 0;
+            int countOfDays = 0;
+
+            while (countOfConsequativeSpendingDays <= 5)
+            {
+                
+                double currentMoney = double.Parse(Console.ReadLine());
+                countOfDays++;
+                if (operation == "spend")
+                {
+                    availableMoney -= currentMoney;
+                    countOfConsequativeSpendingDays++;
+
+                    if (countOfConsequativeSpendingDays == 5)
+                    {
+                        Console.WriteLine("You can't save the money.");
+                        Console.WriteLine($"{countOfDays}"); break;
+
+                    }
+
+                    if (availableMoney < currentMoney)
+                    {
+
+                        availableMoney = 0;
+                    }
+                }
+                if (operation == "save")
+                {
+                    availableMoney += currentMoney;
+                    countOfConsequativeSpendingDays = 0;
+
+                }
+                
+                if (availableMoney >= vacationMoney)
+                {
+                    Console.WriteLine($"You saved the money for {countOfDays} days."); break;
+                }
+                operation = Console.ReadLine();
+            }
+                
+
+
+        }
+    }
+}
