@@ -1,0 +1,43 @@
+using System;
+
+namespace T08Graduationpt._2Ver3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string name = Console.ReadLine();
+            int repetativeYear = 0;
+            double averageGrade = 0;
+
+
+            for (int schoolYear = 1; schoolYear <= 12; schoolYear++)
+            {
+
+                double grade = double.Parse(Console.ReadLine());
+
+                if (grade < 4)
+                {
+                    repetativeYear++;
+
+                    if (repetativeYear > 1)
+                    {
+                        Console.WriteLine($"{name} has been excluded at {schoolYear} grade");
+                        return;
+                    }
+                    schoolYear--;
+                    continue;
+
+                }
+
+                averageGrade += grade / 12;
+
+               
+
+            }
+            Console.WriteLine($"{name} graduated. Average grade: {averageGrade:f2}");
+
+        }
+
+    }
+}
