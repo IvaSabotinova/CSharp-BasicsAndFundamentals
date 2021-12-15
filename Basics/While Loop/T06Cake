@@ -1,0 +1,34 @@
+using System;
+
+namespace T06Cake
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int cakeWidth = int.Parse(Console.ReadLine());
+            int cakeLength = int.Parse(Console.ReadLine());
+            int cakeDimension = cakeWidth * cakeLength;
+            string input = Console.ReadLine();
+
+            const int pieceOfCakeDimensions = 1;
+            int countOfPiecesCake = 0;
+            int eatenCake = countOfPiecesCake * pieceOfCakeDimensions;
+
+            while (input != "STOP")
+            {
+                int numberOfPiecesCake = int.Parse(input);
+                eatenCake += (numberOfPiecesCake * pieceOfCakeDimensions);
+
+                if (eatenCake >= cakeDimension)
+                {
+                    Console.WriteLine($"No more cake left! You need {(eatenCake - cakeDimension) / pieceOfCakeDimensions} pieces more."); return;
+                }
+
+                input = Console.ReadLine();
+            }
+
+            Console.WriteLine($"{cakeDimension - eatenCake / pieceOfCakeDimensions} pieces are left.");
+        }
+    }
+}
