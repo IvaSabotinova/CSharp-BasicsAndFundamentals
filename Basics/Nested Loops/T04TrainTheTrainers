@@ -1,0 +1,41 @@
+using System;
+
+namespace T04TrainTheTrainers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int numberOfJoury = int.Parse(Console.ReadLine());
+            string presentation = Console.ReadLine();
+
+            int countOfPresentations = 0;
+            double totalGradeAllPresentations = 0;
+            int countAllGrades = 0;
+
+            while (presentation != "Finish")
+            {
+                
+                int numberOfGradesPerPresentation = 0;
+                double sumGradesPerPresentation = 0;
+
+                while (numberOfGradesPerPresentation < numberOfJoury)
+                {
+                    
+                    double grade = double.Parse(Console.ReadLine());
+                    sumGradesPerPresentation += grade;
+                    numberOfGradesPerPresentation++;
+                }
+                double averageGradePerPresentastion = sumGradesPerPresentation / numberOfJoury;
+                Console.WriteLine($"{presentation} - {averageGradePerPresentastion:f2}.");
+                countOfPresentations++;
+                totalGradeAllPresentations += sumGradesPerPresentation;
+                countAllGrades += numberOfGradesPerPresentation;
+                presentation = Console.ReadLine();
+            }
+            double averageGradeAllPresentations = totalGradeAllPresentations / countAllGrades;
+            Console.WriteLine($"Student's final assessment is {averageGradeAllPresentations:f2}.");
+        }
+    }
+}
